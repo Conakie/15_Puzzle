@@ -175,7 +175,8 @@ void Board::swap(Point b)
 
 std::ostream& operator<<(std::ostream& out, const Board& board)
 {
-    printEmptyLines(Costants::emptyLines);
+    system("cls");
+    system("Color 07");
     std::cout << "-----------------\n";
     for (int i = 0; i < 4; ++i)
     {

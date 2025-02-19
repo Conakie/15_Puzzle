@@ -16,28 +16,28 @@ static void game()
     while (!board.checkForWin() && action != 'q')
     {
         std::cout << board;
-        std::cout << "Cosa fai?\n(w/a/s/d = sopra/destra/sotto/sinistra)\n(q = quit)\n";
+        std::cout << "Cosa fai?\n(w/a/s/d = up/right/down/left)\n(q = quit)\n";
         action = Input::character();
         board.move(static_cast<Direction>(action));
     }
 
     if (board.checkForWin())
     {
-        std::cout << "HAI VINTO!!!\n"
-            << "Vuoi giocare ancora?\n(y/s = si/yes)\n(n = no)\n";
+        std::cout << "You won!\n"
+            << "Do you want to play again?\n(y/s = si/yes)\n(n = no)\n";
     }
     else if (action == 'q')
     {
-        std::cout << "Sto chiudendo tutto. Adios.\n";
+        std::cout << "Killing the app... Adios.\n";
         delay(3);
     }
 }
 
 int main()
 {
-    system("Color 56");
+    system("Color 07");
     bool play{ true };
-    std::cout << "Vuoi giocare?\n(y/s = si/yes)\n(n = no)\n";
+    std::cout << "Do you want to play?\n(y/s = si/yes)\n(n = no)\n";
     while (play)
     {
         switch (Input::character())
@@ -52,7 +52,7 @@ int main()
             break;
         }
     }
-    std::cout << "Nanre: \"Sto chiudendo la console.\"\n";
+    std::cout << "Nanre: \"Closing the console...\"\n";
     delay(3);
     return 0;
 }
